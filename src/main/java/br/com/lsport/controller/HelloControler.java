@@ -9,7 +9,7 @@ import br.com.lsport.model.User;
 @Controller
 public class HelloControler {
 
-    @GetMapping("/signup")
+    @GetMapping("/pedido")
     public ModelAndView showSignUpForm() {
         User user = new User();
         user.setName("Danilo");
