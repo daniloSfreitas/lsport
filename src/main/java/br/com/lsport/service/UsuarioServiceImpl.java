@@ -1,0 +1,27 @@
+package br.com.lsport.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import br.com.lsport.dao.ClienteDaoImpl;
+import br.com.lsport.model.Cliente;
+
+public class UsuarioServiceImpl implements UsuarioService{
+	
+	@Autowired
+	public ClienteDaoImpl clientedaoImpl;
+	
+	@Override
+	public List<Cliente> getAll() {
+		List<Cliente> clientes = clientedaoImpl.getAll();
+		return clientes;
+	}
+
+	@Override
+	public String cadastrar(Cliente nome) {
+		clientedaoImpl.cadastrar(nome);
+		return "Cadastrado";
+	}
+
+}

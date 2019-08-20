@@ -1,4 +1,4 @@
-package dao;
+package br.com.lsport.dao;
 
 import java.util.List;
 
