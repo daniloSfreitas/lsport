@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import br.com.lsport.dao.ClienteDaoImpl;
 import br.com.lsport.model.Cliente;
 
-public class UsuarioServiceImpl implements UsuarioService{
+public class ClienteServiceImpl implements ClienteService{
 	
 	@Autowired
 	public ClienteDaoImpl clientedaoImpl;

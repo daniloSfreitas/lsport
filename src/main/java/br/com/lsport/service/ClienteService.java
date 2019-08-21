@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.com.lsport.model.Cliente;
 
-public interface UsuarioService {
+public interface ClienteService {
 
 	public List<Cliente> getAll();
 	
