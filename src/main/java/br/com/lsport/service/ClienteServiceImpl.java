@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.lsport.dao.ClienteDaoImpl;
 import br.com.lsport.model.Cliente;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ClienteServiceImpl implements ClienteService{
 	
 	@Autowired

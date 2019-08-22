@@ -13,13 +13,12 @@ import br.com.lsport.model.Cliente;
 import br.com.lsport.service.ClienteServiceImpl;
 
 @RestController
-@RequestMapping("cliente")
-
+@RequestMapping("/cliente")
 
 public class ClienteControler {
 	
 	@Autowired
-	public ClienteServiceImpl clieteServiceImpl;
+	public ClienteServiceImpl clienteServiceImpl;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Cliente>> getAll(){

@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 import br.com.lsport.model.Cliente;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ClienteDaoImpl implements ClienteDao {
 	
 	@Autowired
