@@ -13,8 +13,7 @@ import br.com.lsport.model.Cliente;
 import br.com.lsport.service.ClienteServiceImpl;
 
 @RestController
-@RequestMapping("/cliente")
-
+@RequestMapping("cliente")
 public class ClienteControler {
 	
 	@Autowired
