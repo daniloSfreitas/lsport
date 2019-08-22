@@ -10,4 +10,5 @@ public class LsportApplication {
 		SpringApplication.run(LsportApplication.class, args);
 	}
 
+		
 }

@@ -1,8 +1,12 @@
 package br.com.lsport.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "teste")
+
 public class Cliente {
 
-
+	
         private String name;
         private String modelo;
         private String tamanho;
@@ -81,7 +85,7 @@ public class Cliente {
 			this.email = email;
 		}
         
-               
+		               
      
 
         // standard constructors / setters / getters / toString
