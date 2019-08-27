@@ -15,7 +15,7 @@ public class MongoConfiguration extends AbstractMongoConfiguration {
 	@Override
 	public MongoClient mongoClient() {
 		MongoClientURI uri = new MongoClientURI(
-			    "mongodb+srv://root:root@cluster0-kosd5.mongodb.net/test?retryWrites=true&w=majority");
+			    "mongodb+srv://root:root@cluster0-kosd5.mongodb.net/LSPORT?retryWrites=true&w=majority");
 
 			MongoClient mongoClient = new MongoClient(uri);
 			MongoDatabase database = mongoClient.getDatabase("LSPORT");

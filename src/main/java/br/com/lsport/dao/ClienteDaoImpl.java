@@ -19,7 +19,7 @@ public class ClienteDaoImpl implements ClienteDao {
 		List<Cliente> clientes = null;
 		 try {
 			 
-			 clientes = mongoTemplate.findAll(Cliente.class, "cliente");
+			 clientes = mongoTemplate.findAll(Cliente.class, "Cliente");
 			
 		} catch (Exception e) {
 			// TODO: handle exception

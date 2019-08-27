@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Cliente {
 
 	
-        private String name;
+        private String nome;
         private String modelo;
         private String tamanho;
         private String nomeC;
@@ -18,11 +18,12 @@ public class Cliente {
         private int compl;
         private int telefone;
         private String email;
-		public String getName() {
-			return name;
+        
+		public String getNome() {
+			return nome;
 		}
-		public void setName(String name) {
-			this.name = name;
+		public void setNome(String nome) {
+			this.nome = nome;
 		}
 		public String getModelo() {
 			return modelo;
