@@ -2,7 +2,7 @@ package br.com.lsport.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "cliente")
+@Document(collection = "/cliente")
 
 public class Cliente {
 
