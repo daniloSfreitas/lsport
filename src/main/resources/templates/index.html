@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,12 +38,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                <tr th:each="user : ${users}">
-                    <td th:text="${user.name}"></td>
-                    <td th:text="${user.email}"></td>
-                    <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>
-                    <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
-                </tr>
+                <tr th:each="cliente : ${cliente}">
+                    <td th:text="${cliente.name}"></td>
+                    <td th:text="${cliente.modelo}"></td>
+                    <td th:text="${cliente.tamanho}"></td>
+                    <td th:text="${cliente.nomeC}"></td>
+                    <td th:text="${cliente.numero}"></td>
+                    <td th:text="${cliente.cep}"></td>
+                    <td th:text="${cliente.rua}"></td>
+                    <td th:text="${cliente.apt}"></td>
+                    <td th:text="${cliente.compl}"></td>
+                    <td th:text="${cliente.telefone}"></td>
+                    <td th:text="${cliente.email}"></td>
+                    <td th:text="${cliente.submit}"></td>
+                    <td><a th:href="@{/index/{id}(id=${cliente.id})}">Cadastrar</a></td>
+                 </tr>
             </tbody>
         </table>
     </div>      
@@ -53,7 +62,7 @@
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<form role="form" action="#" th:action="@{/cadastrar]" th:object="${user}" method="post">
+			<form role="form" action="#" th:action="@{/]" th:object="${cliente}" method="post">
 				<div class="form-group">
 					 
 					<label for="nome">
@@ -66,7 +75,7 @@
 					<label for="modelo">
 						Modelo
 					</label>
-			        <input type="text" th:field="*{modelo}" class="form-control" id="Modelo">
+			        <input type="text" th:field="*{modelo}" class="form-control" id="modelo">
 			     </div>
 			     	<div class="form-group">
 					 
@@ -130,7 +139,7 @@
 			        <input type="email" th:field="*{email}" class="form-control" id="email">
 			     </div>
 					<button type="submit" class="btn btn-primary" value="cadastrar">
-					Submit
+					Cadastrar
 				</button>
 			</form>
 		</div>
