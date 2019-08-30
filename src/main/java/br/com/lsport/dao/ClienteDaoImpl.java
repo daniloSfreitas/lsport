@@ -32,6 +32,8 @@ public class ClienteDaoImpl implements ClienteDao {
 		
 		try {
 			
+			Cliente cadastro = new Cliente();
+			
 			mongoTemplate.insert("");
 			
 		} catch (Exception e) {

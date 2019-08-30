@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,86 +16,120 @@
   </head>
   <body>
 
+<div th:switch="${Cliente}">
+    <h2 th:case="null">No users yet!</h2>
+        <div th:case="*">
+            <h2>Cliente</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Modelo</th>
+                        <th>Tamanho</th>
+                        <th>NomeCamisa</th>
+                        <th>Numero</th>
+                        <th>CEP</th>
+                        <th>Rua</th>
+                        <th>Apartamento</th>                        
+                        <th>Complemento</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Submit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="/signup">Add a new user</a></p>
+</div>
+
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<form role="form">
+			<form role="form" action="#" th:action="@{/cadastrar]" th:object="${user}" method="post">
 				<div class="form-group">
 					 
 					<label for="nome">
 						Nome
 					</label>
-					<input type="text" class="form-control" id="nome">
+					<input type="text" th:field="*{nome}" class="form-control" id="nome">
 				</div>
 				<div class="form-group">
 					 
 					<label for="modelo">
 						Modelo
 					</label>
-			        <input type="text" class="form-control" id="Modelo">
+			        <input type="text" th:field="*{modelo}" class="form-control" id="Modelo">
 			     </div>
 			     	<div class="form-group">
 					 
 					<label for="tamanho">
 						Tamanho
 					</label>
-			        <input type="text" class="form-control" id="tamanho">
+			        <input type="text" th:field="*{tamanho}" class="form-control" id="tamanho">
 			     </div>
 			     	<div class="form-group">
 					 
 					<label for="exampleInputPassword1">
 						NomeCamisa
 					</label>
-			        <input type="text" class="form-control" id="nomeC">
+			        <input type="text" th:field="*{nomeC}" class="form-control" id="nomeC">
 			     </div>
 			     	<div class="form-group">
 					 
 					<label for="exampleInputPassword1">
 						Numero
 					</label>
-			        <input type="number" class="form-control" id="numero">
+			        <input type="number" th:field="*{numero}" class="form-control" id="numero">
 			     </div>	<div class="form-group">
 					 
 					<label for="exampleInputPassword1">
 						CEP
 					</label>
-			        <input type="number" class="form-control" id="cep">
+			        <input type="number" th:field="*{cep}" class="form-control" id="cep">
 			     </div>
 			     	<div class="form-group">
 					 
 					<label for="exampleInputPassword1">
 						Rua
 					</label>
-			        <input type="text" class="form-control" id="rua">
+			        <input type="text" th:field="*{rua}" class="form-control" id="rua">
 			     </div>	<div class="form-group">
 					 
 					<label for="exampleInputPassword1">
 						Apartamento
 					</label>
-			        <input type="number" class="form-control" id="apt">
+			        <input type="number" th:field="*{apt}" class="form-control" id="apt">
 			     </div>
 			     	<div class="form-group">
 					 
 					<label for="exampleInputPassword1">
 						Complemento
 					</label>
-			        <input type="number" class="form-control" id="compl">
+			        <input type="number" th:field="*{compl}" class="form-control" id="compl">
 			     </div>
 			     	<div class="form-group">
 					 
 					<label for="exampleInputPassword1">
 						Telefone
 					</label>
-			        <input type="number" class="form-control" id="telefone">
+			        <input type="number" th:field="*{telefone}" class="form-control" id="telefone">
 			     </div>
 			     	<div class="form-group">
 					 
 					<label for="exampleInputPassword1">
 						Email
 					</label>
-			        <input type="email" class="form-control" id="email">
+			        <input type="email" th:field="*{email}" class="form-control" id="email">
 			     </div>
-					<button type="submit" class="btn btn-primary">
+					<button type="submit" class="btn btn-primary" value="cadastrar">
 					Submit
 				</button>
 			</form>

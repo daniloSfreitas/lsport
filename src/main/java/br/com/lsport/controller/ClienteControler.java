@@ -25,11 +25,21 @@ public class ClienteControler {
 		List<Cliente> cliente = clienteServiceImpl.getAll();
 		
 	return new ResponseEntity<List<Cliente>>(cliente, HttpStatus.OK);
-		
-		
-		
+			
 	}
 
+	@RequestMapping (method = RequestMethod.POST)
+	public String cadastrar(@valid Cliente cliente) {
+		if(result.hasErros()) {
+		
+		return "Error";
+				
+	}
+		clienteServiceImpl.cadastrar(cliente);
+		model.addAtrtibute("cliente", clienteServiceImpl.cadastrar());
+		return "index";
+	}
+	
 	
 	
 	
