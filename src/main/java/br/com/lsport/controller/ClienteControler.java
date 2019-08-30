@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,14 +31,14 @@ public class ClienteControler {
 	}
 
 	@RequestMapping (method = RequestMethod.POST)
-	public String cadastrar(@valid Cliente cliente) {
-		if(result.hasErros()) {
+	public String cadastrar(@valid Cliente cliente, BindingResult result, Model model) {
+		if (result.hasErrors()) {
 		
 		return "Error";
 				
 	}
 		clienteServiceImpl.cadastrar(cliente);
-		cliente.addAtrtibute("cliente", clienteServiceImpl.cadastrar(cliente));
+		model.addAttribute("cliente", clienteServiceImpl.cadastrar(cliente));
 		return "index";
 	}
 	
