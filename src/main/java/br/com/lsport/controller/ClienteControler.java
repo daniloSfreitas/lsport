@@ -36,7 +36,7 @@ public class ClienteControler {
 				
 	}
 		clienteServiceImpl.cadastrar(cliente);
-		model.addAtrtibute("cliente", clienteServiceImpl.cadastrar());
+		cliente.addAtrtibute("cliente", clienteServiceImpl.cadastrar(cliente));
 		return "index";
 	}
 	
