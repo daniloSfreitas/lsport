@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pr-br" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,8 @@
 					<label for="nome">
 						Nome
 					</label>
-					<input type="text"  class="form-control" id="nome">
+					 <input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
+                     <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger"></span>
 				</div>
 				<div class="form-group">
 					 
@@ -33,6 +34,8 @@
 						Modelo
 					</label>
 			        <input type="text"  class="form-control" id="modelo">
+			         <input type="text" th:field="*{modelo}" class="form-control" id="nodelo" placeholder="Modelo">
+                     <span th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}" class="text-danger"></span>
 			     </div>
 			     	<div class="form-group">
 					 
@@ -40,6 +43,8 @@
 						Tamanho
 					</label>
 			        <input type="text"  class="form-control" id="tamanho">
+			         <input type="text" th:field="*{tamanho}" class="form-control" id="tamanho" placeholder="Tamanho">
+                     <span th:if="${#fields.hasErrors('tamanho')}" th:errors="*{tamanho}" class="text-danger"></span>
 			     </div>
 			     	<div class="form-group">
 					 
@@ -47,6 +52,8 @@
 						NomeCamisa
 					</label>
 			        <input type="text"  class="form-control" id="nomeC">
+			         <input type="text" th:field="*{nomeC}" class="form-control" id="nomeC" placeholder="NomeC">
+                     <span th:if="${#fields.hasErrors('nomeC')}" th:errors="*{nomeC}" class="text-danger"></span>
 			     </div>
 			     	<div class="form-group">
 					 
@@ -54,12 +61,16 @@
 						Numero
 					</label>
 			        <input type="number"  class="form-control" id="numero">
+			         <input type="text" th:field="*{numero}" class="form-control" id="numero" placeholder="Numero">
+                     <span th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}" class="text-danger"></span>
 			     </div>	<div class="form-group">
 					 
 					<label for="cep">
 						CEP
 					</label>
 			        <input type="number"  class="form-control" id="cep">
+			         <input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="Cep">
+                     <span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 			     </div>
 			     	<div class="form-group">
 					 
@@ -67,12 +78,16 @@
 						Rua
 					</label>
 			        <input type="text"  class="form-control" id="rua">
+			         <input type="text" th:field="*{rua}" class="form-control" id="rua" placeholder="Rua">
+                     <span th:if="${#fields.hasErrors('rua')}" th:errors="*{rua}" class="text-danger"></span>
 			     </div>	<div class="form-group">
 					 
 					<label for="apt">
 						Apartamento
 					</label>
 			        <input type="number"  class="form-control" id="apt">
+			         <input type="text" th:field="*{apt}" class="form-control" id="apt" placeholder="Apt">
+                     <span th:if="${#fields.hasErrors('apt')}" th:errors="*{apt}" class="text-danger"></span>
 			     </div>
 			     	<div class="form-group">
 					 
@@ -80,6 +95,8 @@
 						Complemento
 					</label>
 			        <input type="number"  class="form-control" id="compl">
+			         <input type="text" th:field="*{compl}" class="form-control" id="compl" placeholder="Compl">
+                     <span th:if="${#fields.hasErrors('compl')}" th:errors="*{compl}" class="text-danger"></span>
 			     </div>
 			     	<div class="form-group">
 					 
@@ -87,6 +104,8 @@
 						Telefone
 					</label>
 			        <input type="number"  class="form-control" id="telefone">
+			         <input type="text" th:field="*{telefone}" class="form-control" id="telefone" placeholder="Telefone">
+                     <span th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}" class="text-danger"></span>
 			     </div>
 			     	<div class="form-group">
 					 
@@ -94,6 +113,8 @@
 						Email
 					</label>
 			        <input type="email" class="form-control" id="email">
+			         <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email">
+                     <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
 			     </div>
 					<button type="submit" class="btn btn-primary" value="cadastrar">
 					Cadastrar
