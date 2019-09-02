@@ -1,5 +1,7 @@
 package br.com.lsport.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,15 +14,15 @@ import br.com.lsport.model.Cliente;
 import br.com.lsport.service.ClienteServiceImpl;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("cliente")
 public class ClienteControler {
 	
 	@Autowired
 	public ClienteServiceImpl clienteServiceImpl;
 	
-	 @GetMapping("/cliente")
-	    public String showSignUpForm(Cliente clientes) {
-	        return "Cliente";
+	 @GetMapping("*")
+	    public String showSignUpForm(List<Cliente> clientes) {
+	        return "cliente";
 	    }
 
 	@PostMapping("/cadastro")
