@@ -9,17 +9,15 @@
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
   </head>
   <body>
 
      <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<form role="form" action="#"  method="post">
+			<form role="form" action="#"  th:action="@{/cadastrar}" th:object="${cliente}" method="post">
 				<div class="form-group">
 					 
 					<label for="nome">
@@ -123,9 +121,5 @@
 		</div>
 	</div>
 </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+ </body>
 </html>
