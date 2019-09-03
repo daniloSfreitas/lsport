@@ -21,9 +21,9 @@ public class ClienteServiceImpl implements ClienteService{
 	}
 
 	@Override
-	public String cadastrar(Cliente cliente) {
-		clientedaoImpl.cadastrar(cliente);
-		return "Cadastrado";
+	public Cliente cadastrar(Cliente cliente) {
+		Cliente c = clientedaoImpl.cadastrar(cliente);
+		return c;
 	}
 
 }

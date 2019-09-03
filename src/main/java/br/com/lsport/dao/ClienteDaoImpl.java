@@ -28,18 +28,14 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public Cliente cadastrar(Cliente nome) {
+	public Cliente cadastrar(Cliente cliente) {
 		
 		try {
-			
-			Cliente cadastro = new Cliente();
-			
-			mongoTemplate.insert(cadastro);
-			
+			mongoTemplate.insert(cliente);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return nome;
+		return cliente;
 	}
 
 }

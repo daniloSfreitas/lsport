@@ -8,5 +8,5 @@ public interface ClienteService {
 
 	public List<Cliente> getAll();
 	
-	public String cadastrar(Cliente nome);
+	public Cliente cadastrar(Cliente nome);
 }

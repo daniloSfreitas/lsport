@@ -2,11 +2,11 @@ package br.com.lsport.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "/cliente")
+@Document(collection = "Cliente")
 
 public class Cliente {
 
-	
+	    private String _id;
         private String nome;
         private String modelo;
         private String tamanho;
@@ -85,10 +85,14 @@ public class Cliente {
 		public void setEmail(String email) {
 			this.email = email;
 		}
-        
-		               
-     
 
-        // standard constructors / setters / getters / toString
+	public String getId() {
+		return _id;
+	}
+
+	public void setId(String _id) {
+		this._id = _id;
+	}
+	// standard constructors / setters / getters / toString
 
 }

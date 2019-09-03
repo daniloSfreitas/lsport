@@ -10,13 +10,16 @@
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
   </head>
   <body>
 
-<div th:switch="${Cliente}" class="container my-5">
+  <div th:switch="${error}" class="container my-5">
+  </div>
+
+<div th:switch="${cliente}" class="container my-5">
     <div class="row">
      <div class="col-md-6">
       <h2 th:case="null">No users yet!</h2>
@@ -32,7 +35,7 @@
                         <th>Numero</th>
                         <th>CEP</th>
                         <th>Rua</th>
-                        <th>Apartamento</th>                        
+                        <th>Apartamento</th>
                         <th>Complemento</th>
                         <th>Telefone</th>
                         <th>Email</th>
@@ -41,7 +44,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="cliente : ${cliente}">
-                    <td th:text="${cliente.name}"></td>
+                    <td th:text="${cliente.nome}"></td>
                     <td th:text="${cliente.modelo}"></td>
                     <td th:text="${cliente.tamanho}"></td>
                     <td th:text="${cliente.nomeC}"></td>
@@ -52,13 +55,11 @@
                     <td th:text="${cliente.compl}"></td>
                     <td th:text="${cliente.telefone}"></td>
                     <td th:text="${cliente.email}"></td>
-                    <td th:text="${cliente.submit}"></td>
-                    <td><a th:href="@{/index/{id}(id=${cliente.id})}">Cadastrar</a></td>
                  </tr>
             </tbody>
         </table>
-    </div>      
-    <p class="my-5"><a href="/cadastro" class="btn btn-primary">Add a new user<i class="fas fa-user-plus ml-2"></i></a></p>
+    </div>
+    <p class="my-5"><a href="/cadastro" class="btn btn-primary">Adicionar novo cliente.<i class="fas fa-user-plus ml-2"></i></a></p>
   </div>
  </div>
 </div>
