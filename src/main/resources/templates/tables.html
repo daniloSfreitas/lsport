@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cadastro Cliente!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+
+  <div th:switch="${error}" class="container my-5">
+  </div>
+
+<div th:switch="${cliente}" class="container my-5">
+    <div class="row">
+     <div class="col-md-6">
+      <h2 th:case="null">No users yet!</h2>
+        <div th:case="*">
+            <h2 class="my-5" >Cliente</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Modelo</th>
+                        <th>Tamanho</th>
+                        <th>NomeCamisa</th>
+                        <th>Numero</th>
+                        <th>CEP</th>
+                        <th>Rua</th>
+                        <th>Apartamento</th>
+                        <th>Complemento</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="cliente : ${cliente}">
+                    <td th:text="${cliente.nome}"></td>
+                    <td th:text="${cliente.modelo}"></td>
+                    <td th:text="${cliente.tamanho}"></td>
+                    <td th:text="${cliente.nomeC}"></td>
+                    <td th:text="${cliente.numero}"></td>
+                    <td th:text="${cliente.cep}"></td>
+                    <td th:text="${cliente.rua}"></td>
+                    <td th:text="${cliente.apt}"></td>
+                    <td th:text="${cliente.compl}"></td>
+                    <td th:text="${cliente.telefone}"></td>
+                    <td th:text="${cliente.email}"></td>
+                 </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="my-5"><a href="/cadastro" class="btn btn-primary">Adicionar novo cliente.<i class="fas fa-user-plus ml-2"></i></a></p>
+  </div>
+ </div>
+</div>
+   <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

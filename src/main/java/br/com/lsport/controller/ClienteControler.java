@@ -20,11 +20,11 @@ public class ClienteControler {
 	@Autowired
 	public ClienteServiceImpl clienteServiceImpl;
 
-	@GetMapping("/")
+	@GetMapping("/tables")
 	public String getAll(Model model) {
 
 		model.addAttribute("cliente", clienteServiceImpl.getAll());
-		return "index";
+		return "tables";
 	}
 
 	@GetMapping("/cadastro")
@@ -36,11 +36,11 @@ public class ClienteControler {
 	public String cadastrar(@valid Cliente cliente, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("error", result.getAllErrors());
-			return "index";
+			return "tables";
 		}
 		Cliente c = clienteServiceImpl.cadastrar(cliente);
 		model.addAttribute("cliente", clienteServiceImpl.getAll());
-		return "index";
+		return "tables";
 	}
 	
 	
